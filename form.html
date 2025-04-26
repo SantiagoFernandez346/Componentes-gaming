@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La mejor pagina de venta de componentes precio-calidad, ofrecemos lo mejor en gaming por un bajo precio">
+    <meta name="keywords" content="pcgamer, gaming, barato, componentes"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Opinion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="https://kit.fontawesome.com/05e34d6455.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <!--navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="images/cropped-Idea-Logo-1.png" class="nav__img" alt="Logo de ComponentesGaming"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Componentes
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="mother.html">Motherboards</a></li>
+                  <li><a class="dropdown-item" href="Proscesadores.html">Proscesadores</a></li>
+                  <li><a class="dropdown-item" href="Placas-de-video.html">Placas de video</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form.html">Contactanos</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="carrito.html" aria-label="Carrito de compras">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+<!--formulario-->
+    <form class="form">
+        <div class="form__nombre">
+        <label for="nombre">Nombre:</label>
+        <input type="text" placeholder="Ingrese Su Nombre" id="nombre">
+        </div>
+        <div class="form__experiencia">
+        <label for="experiencia">Como fue tu experiencia?</label>
+        <select name="experiencia" id="experiencia">
+
+            <option value="mb">Muy Buena</option>
+            <option value="n">Neutral</option>
+            <option value="m">Mala</option>
+        </select>
+        </div>
+        <div class="form__mas">
+        <label for="mas">Contanos mas sobre tu experiencia en nuestra pagina:</label> 
+        </div>
+        <textarea name="mas" id="" cols="30" rows="10"></textarea>
+        </div> 
+        <div class="form__terminos">
+        <label for="terminos">¿Aceptas los terminos y condiciones?</label>
+        <input type="checkbox" name="Acepto" value="1">
+        </div>
+        <input type="reset">
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Enviar datos
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gracias por contactarnos!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Leeremos tu opinion y intentaremos mejorar nuestra pagina 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+    </form>
+     <!--footer-->
+     <footer>
+      <div class="footer__content">
+          <h5 class="paraTransicion">ComponentesGaming</h5>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab reiciendis ullam expedita minus sed </p>
+          <ul class="footer__redes">
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+      </div>  
+      <div class="footer__bottom">
+        <p>copyright &copy;2021 ComponentesGaming designed by Santiago Fernandez</p>
+      </div>
+      
+  </footer>
+  <!--scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

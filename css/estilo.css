@@ -1,0 +1,385 @@
+/* Reset and base styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 300;
+  color: #a0b1c5;
+}
+
+body {
+  background: #0b1622;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  color: #cbd5e1;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: capitalize;
+  color: #e0e7ff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #60a5fa;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #3b82f6;
+  outline: none;
+}
+
+/* Navbar improvements */
+.navbar {
+  background-color: #0a1a2a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar:hover {
+  background-color: #112b47;
+}
+
+.nav__img {
+  width: 130px;
+  float: left;
+  transition: transform 0.3s ease;
+}
+
+.nav__img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  color: #cbd5e1;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+  outline: none; /* Remove blue outline */
+  box-shadow: none; /* Remove any box shadow */
+}
+
+/* Remove focus outline on active nav-link but keep for accessibility */
+.navbar-nav .nav-link.active:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Dropdown menu */
+.navbar-nav .nav-item.dropdown:hover > .nav-link {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.dropdown-menu {
+  background-color: #112b47;
+  border: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  color: #cbd5e1;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #3b82f6;
+  color: #fff;
+  outline: none;
+}
+
+/* Noticias aside */
+.noticias__aside {
+  animation-duration: 3s;
+  animation-name: slidein;
+  background-color: #151f2e;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Carousel */
+.carousel-inner {
+  width: 80vw;
+  max-width: 900px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* Footer style improvements */
+footer {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: 30px 20px 20px 20px;
+  color: #e0e7ff;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-top: 3px solid #3b82f6;
+  transition: background-color 0.3s ease;
+}
+
+footer:hover {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
+  gap: 10px;
+}
+
+.footer__content h5 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: #60a5fa;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.footer__content h5:hover {
+  color: #3b82f6;
+  cursor: default;
+}
+
+.footer__content p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #cbd5e1;
+}
+
+.footer__redes {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.footer__redes li {
+  margin: 0;
+}
+
+.footer__redes a {
+  color: #60a5fa;
+  font-size: 1.8rem;
+  transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.footer__redes a:hover i {
+  color: #3b82f6;
+  transform: scale(1.2);
+}
+
+.footer__bottom {
+  background-color: transparent;
+  width: 100vw;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+  word-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: none;
+  user-select: none;
+}
+
+/* Contactanos form styles */
+.form {
+  max-width: 600px;
+  margin: 2rem auto 4rem auto;
+  background-color: #151f2e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  color: #cbd5e1;
+  font-size: 16px;
+  text-align: left;
+}
+
+.form__nombre,
+.form__experiencia,
+.form__mas,
+.form__terminos {
+  margin-bottom: 1.5rem;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #a0b1c5;
+}
+
+.form input[type="text"],
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #3b82f6;
+  border-radius: 6px;
+  background-color: #0b1622;
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form input[type="text"]:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 8px #3b82f6;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form__terminos {
+  display: flex;
+  align-items: center;
+}
+
+.form__terminos label {
+  margin-left: 0.5rem;
+  font-weight: 400;
+  color: #a0b1c5;
+}
+
+.form input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.form input[type="reset"],
+.form button.btn-primary {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+
+.form input[type="reset"] {
+  background-color: #6b7280;
+  color: #fff;
+}
+
+.form input[type="reset"]:hover {
+  background-color: #4b5563;
+}
+
+.form button.btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.form button.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+/* Modal styles are handled by Bootstrap */
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .noticias__aside {
+    max-width: 100%;
+    margin: 1rem;
+  }
+  .carousel-inner {
+    width: 95vw;
+  }
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-nav .nav-link {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .form input[type="reset"],
+  .form button.btn-primary {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  .nav__img {
+    width: 90px;
+  }
+}
