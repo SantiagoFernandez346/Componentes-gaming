@@ -66,7 +66,7 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
-                        <div class="card h-100" data-id="1" data-name="ASUS A68HM-PLUS" data-price="40.00" data-image="images/A68HM.jpg">
+                        <div class="card h-100" data-id="m-1" data-name="ASUS A68HM-PLUS" data-price="40.00" data-image="images/A68HM.jpg">
                             <!-- Product image-->
                             <img class="card-img-top" src="images/A68HM.jpg" alt="ASUS A68HM-PLUS" />
                             <!-- Product details-->
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card h-100" data-id="2" data-name="Gigabyte H510M H 1200" data-price="120.00" data-image="images/H510M-H_800.jpg">
+                        <div class="card h-100" data-id="m-2" data-name="Gigabyte H510M H 1200" data-price="120.00" data-image="images/H510M-H_800.jpg">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
                             <!-- Product image-->
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card h-100" data-id="3" data-name="Gigabyte A320M S2H" data-price="75.00" data-image="images/GA-A320M-S2H_800.jpg">
+                        <div class="card h-100" data-id="m-3" data-name="Gigabyte A320M S2H" data-price="75.00" data-image="images/GA-A320M-S2H_800.jpg">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
                             <!-- Product image-->
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="col mb-5">
-                        <div class="card h-100" data-id="4" data-name="Asus PRIME B450M" data-price="110.00" data-image="images/Motherboard-Asus-PRIME-B450M-A-II.jpg">
+                        <div class="card h-100" data-id="m-4" data-name="Asus PRIME B450M" data-price="110.00" data-image="images/Motherboard-Asus-PRIME-B450M-A-II.jpg">
                             <!-- Product image-->
                             <img class="card-img-top" src="images/Motherboard-Asus-PRIME-B450M-A-II.jpg" alt="Asus PRIME B450M" />
                             <!-- Product details-->
@@ -148,7 +148,18 @@
                         </div>
                     </div>
                 </section>
-        <!-- Footer-->
+        <!-- Cart UI -->
+        <section class="container my-5" aria-label="Carrito de Compras">
+          <h2 class="mb-4">Carrito de Compras</h2>
+          <div id="cart-items" class="row g-3">
+            <!-- Cart items will be dynamically inserted here -->
+          </div>
+          <div class="mt-4 text-end">
+            <h4>Total: $<span id="cart-total">0.00</span></h4>
+            <button id="clear-cart" class="btn btn-danger">Vaciar Carrito</button>
+          </div>
+        </section>
+
         <footer>
             <div class="footer__content">
                 <h5 class="paraTransicion">ComponentesGaming</h5>
@@ -168,5 +179,6 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script src="script.js"></script>
+        <script src="js/cart.js"></script>
     </body>
 </html>
