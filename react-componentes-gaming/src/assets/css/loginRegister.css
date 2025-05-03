@@ -1,0 +1,74 @@
+.login-register-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #2f2f2f; 
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); 
+  color: #e0e0e0; 
+}
+
+.login-register-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #007bff;
+}
+
+.login-register-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-register-container label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #a9a9a9; 
+}
+
+.login-register-container input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #007bff; 
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #444;
+  color: #e0e0e0; 
+}
+
+.login-register-container input::placeholder {
+  color: #b0b0b0; 
+}
+
+.login-register-container button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-register-container button[type="submit"]:hover {
+  background-color: #0056b3; 
+}
+
+.login-register-container .toggle-button {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.login-register-container .toggle-button button {
+  background: none;
+  border: none;
+  color: #007bff; 
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.login-register-container .toggle-button button:hover {
+  color: #0056b3; 
+}

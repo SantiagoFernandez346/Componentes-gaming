@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const processors = [
   {
@@ -32,10 +33,14 @@ const Processors = () => {
           {processors.map((processor) => (
             <div className="col mb-5" key={processor.id}>
               <div className="card h-100" data-id={processor.id} data-name={processor.name} data-price={processor.price} data-image={processor.image}>
-                <img className="card-img-top" src={processor.image} alt={processor.name} />
+                <Link to={`/product/${processor.id}`}>
+                  <img className="card-img-top" src={processor.image} alt={processor.name} />
+                </Link>
                 <div className="card-body p-4">
                   <div className="text-center">
-                    <h5 className="fw-bolder">{processor.name}</h5>
+                    <Link to={`/product/${processor.id}`} className="text-decoration-none text-dark">
+                      <h5 className="fw-bolder">{processor.name}</h5>
+                    </Link>
                     <span>${processor.price.toFixed(2)}</span>
                   </div>
                 </div>

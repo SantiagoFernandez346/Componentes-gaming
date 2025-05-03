@@ -1,4 +1,4 @@
-/* Reset and base styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,12 +16,12 @@ body {
   flex-direction: column;
 }
 
-/* Navbar styles */
+
 .navbar {
   background-color: #0f172a;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   padding: 0.5rem 1rem;
-  width: 100vw; /* Full viewport width */
+  width: 100vw; /* Ancho completo de la ventana */
   position: fixed;
   top: 0;
   left: 0;
@@ -57,7 +57,7 @@ body {
   box-shadow: none;
 }
 
-/* Cards */
+
 .card {
   background-color: #1e293b;
   border-radius: 12px;
@@ -78,7 +78,7 @@ body {
   border-radius: 12px 12px 0 0;
 }
 
-/* Buttons */
+
 .btn-outline-dark {
   color: #3b82f6;
   border-color: #3b82f6;
@@ -92,13 +92,13 @@ body {
   border-color: #3b82f6;
 }
 
-/* Cart styles */
 .cart-container {
   max-width: 800px;
   margin: 2rem auto;
   background-color: #1e293b;
   border-radius: 12px;
   padding: 1.5rem;
+  padding-bottom: 80px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   color: #f1f5f9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -194,6 +194,7 @@ body {
   font-weight: 700;
   margin-top: 1rem;
   color: #3b82f6;
+  margin-bottom: 40px;
 }
 
 .cart-clear-btn {
@@ -205,15 +206,15 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
-  float: right;
+  margin-top: 30px;
+  float: none;
 }
 
 .cart-clear-btn:hover {
   background-color: #b91c1c;
 }
 
-/* Responsive adjustments */
+/* Ajustes responsivos */
 @media (max-width: 768px) {
   .cart-item {
     flex-direction: column;
@@ -232,7 +233,128 @@ body {
   }
 }
 
-/* Toast notifications */
+/* Estilos del formulario de contacto */
+section.form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section.form h2 {
+  font-size: 2rem;
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section.form div[class^="form__"] {
+  margin-bottom: 1.5rem;
+}
+
+section.form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
+
+section.form input[type="text"],
+section.form select,
+section.form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+section.form input[type="text"]:focus,
+section.form select:focus,
+section.form textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+}
+
+section.form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+section.form .form__terminos {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+section.form .form__terminos input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+section.form .form__terminos label {
+  margin: 0;
+  cursor: pointer;
+  color: #cbd5e1;
+}
+
+section.form button.btn-primary,
+section.form input.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+
+section.form button.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+section.form button.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+section.form input.btn-secondary {
+  background-color: #ef4444;
+  color: white;
+}
+
+section.form input.btn-secondary:hover {
+  background-color: #b91c1c;
+}
+
+/* Ajustes responsivos para el formulario de contacto */
+@media (max-width: 480px) {
+  section.form {
+    padding: 1rem;
+  }
+
+  section.form button.btn-primary,
+  section.form input.btn-secondary {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Notificaciones toast */
 .toast-notification {
   background: #3b82f6;
   color: white;
@@ -249,7 +371,7 @@ body {
   font-size: 1rem;
 }
 
-/* Footer styles */
+/* Estilos del footer */
 footer {
   background: linear-gradient(135deg, #0f172a, #1e293b);
   padding: 20px 10px;
@@ -289,14 +411,30 @@ footer {
   color: #3b82f6;
   font-size: 1.5rem;
   transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
-
 .footer__redes a:hover {
   color: #60a5fa;
   transform: scale(1.1);
+  background-color: #2563eb;
+  border-color: #2563eb;
+  box-shadow: 0 0 8px #2563eb;
 }
 
-/* Responsive adjustments */
+
+.text-decoration-none.text-dark h5.fw-bolder {
+  color: white !important;
+}
+
+/* Ajustes responsivos */
 @media (max-width: 768px) {
   .card-img-top {
     max-height: 140px;
@@ -319,7 +457,8 @@ footer {
 }
 
 main {
-  padding-top: 70px; /* Adjust based on navbar height */
+  padding-top: 70px; 
+  padding-bottom: 100px; 
 }
 
 .noticias__aside {
@@ -344,7 +483,7 @@ main {
   width: 100%;
 }
 
-/* Improved Cart styles */
+
 .cart-container {
   max-width: 800px;
   margin: 2rem auto;

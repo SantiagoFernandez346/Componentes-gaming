@@ -29,6 +29,12 @@ export const CartProvider = ({ children }) => {
         );
       } else {
         const newProduct = JSON.parse(JSON.stringify(product));
+        // Keep only the first image of the product
+        if (Array.isArray(newProduct.images) && newProduct.images.length > 0) {
+          newProduct.image = newProduct.images[0];
+        }
+        // Remove other images property to avoid confusion
+        delete newProduct.images;
         newProduct.quantity = 1;
         return [...prevCart, newProduct];
       }

@@ -22,7 +22,7 @@ const Home = () => {
         </aside>
       </section>
       <section aria-label="Patrocinadores" className="my-5">
-  <div id="carouselExampleIndicators" className="carousel slide rounded shadow-sm" data-bs-ride="carousel" data-bs-interval="1000" data-bs-pause="false">
+  <div id="carouselExampleIndicators" className="carousel slide rounded shadow-sm" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
     <div className="carousel-inner rounded">
       <div className="carousel-item active">
         <img src="/images/AMD.jpg" className="d-block w-100" alt="Logo de AMD" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const motherboards = [
   {
@@ -50,10 +51,14 @@ const Motherboards = () => {
                     Oferta
                   </div>
                 )}
-                <img className="card-img-top" src={board.image} alt={board.name} />
+                <Link to={`/product/${board.id}`}>
+                  <img className="card-img-top" src={board.image} alt={board.name} />
+                </Link>
                 <div className="card-body p-4">
                   <div className="text-center">
-                    <h5 className="fw-bolder">{board.name}</h5>
+                    <Link to={`/product/${board.id}`} className="text-decoration-none text-dark">
+                      <h5 className="fw-bolder">{board.name}</h5>
+                    </Link>
                     {board.salePrice ? (
                       <>
                         <span className="text-muted text-decoration-line-through">${board.salePrice.toFixed(2)}</span> ${board.price.toFixed(2)}

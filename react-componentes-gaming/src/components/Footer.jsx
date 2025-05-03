@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -9,8 +11,16 @@ const Footer = () => {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab reiciendis ullam expedita minus sed
         </p>
         <ul className="footer__redes list-inline">
-          <li className="list-inline-item"><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-          <li className="list-inline-item"><a href="#"><i className="fab fa-twitter"></i></a></li>
+          <li className="list-inline-item">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </a>
+          </li>
+          <li className="list-inline-item">
+            <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </li>
         </ul>
       </div>
       <div className="footer__bottom">

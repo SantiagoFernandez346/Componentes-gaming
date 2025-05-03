@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const videoCards = [
   {
@@ -45,10 +46,14 @@ const VideoCards = () => {
                     Oferta
                   </div>
                 )}
-                <img className="card-img-top" src={card.image} alt={card.name} />
+                <Link to={`/product/${card.id}`}>
+                  <img className="card-img-top" src={card.image} alt={card.name} />
+                </Link>
                 <div className="card-body p-4">
                   <div className="text-center">
-                    <h5 className="fw-bolder">{card.name}</h5>
+                    <Link to={`/product/${card.id}`} className="text-decoration-none text-dark">
+                      <h5 className="fw-bolder">{card.name}</h5>
+                    </Link>
                     {card.salePrice ? (
                       <>
                         <span className="text-muted text-decoration-line-through">${card.salePrice.toFixed(2)}</span> ${card.price.toFixed(2)}
