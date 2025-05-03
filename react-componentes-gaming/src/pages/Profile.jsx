@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
+import '../assets/css/profileAndLoginStyles.css';
 
 const Profile = () => {
   const { loggedInUser, logoutUser } = useContext(UserContext);

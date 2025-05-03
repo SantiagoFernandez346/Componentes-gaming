@@ -26,17 +26,22 @@ export const UserProvider = ({ children }) => {
 
   const addUser = async (user) => {
     setLoading(true);
+    setError(null);
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(user),
       });
-      if (!response.ok) throw new Error('Error adding user');
-      const newUser = await response.json();
-      setUsers((prev) => [...prev, newUser]);
+      const data = await response.json();
+      if (!response.ok) {
+        // Use error message from backend if available
+        throw new Error(data.error || 'Error adding user');
+      }
+      setUsers((prev) => [...prev, data]);
     } catch (err) {
       setError(err.message);
+      throw err; // Re-throw error so caller can catch it
     } finally {
       setLoading(false);
     }

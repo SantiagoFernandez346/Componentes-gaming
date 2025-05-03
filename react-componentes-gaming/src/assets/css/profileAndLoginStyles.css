@@ -1,0 +1,149 @@
+/* Login/Register container */
+.login-register-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+  color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Form heading */
+  .login-register-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #3b82f6;
+  margin-bottom: 25px;
+  font-weight: 700;
+  }
+  
+  /* Form labels */
+  .login-register-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #cbd5e1;
+  }
+  
+  /* Form inputs */
+  .login-register-container input[type="text"],
+  .login-register-container input[type="email"],
+  .login-register-container input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  }
+  
+  .login-register-container input[type="text"]:focus,
+  .login-register-container input[type="email"]:focus,
+  .login-register-container input[type="password"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+  }
+  
+  /* Submit button */
+  .login-register-container .btn-submit {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+  
+  .login-register-container .btn-submit:hover {
+  background-color: #2563eb;
+  }
+  
+  /* Toggle button */
+  .login-register-container .toggle-button {
+  text-align: center;
+  margin-top: 15px;
+  }
+  
+  .login-register-container .toggle-button button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  }
+  
+  .login-register-container .toggle-button button:hover {
+  color: #2563eb;
+  }
+  
+  /* Error and success messages */
+  .login-register-container .error-message {
+  color: #f87171;
+  background-color: #7f1d1d;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 8px #f87171;
+  }
+  
+  .login-register-container .success-message {
+  color: #22c55e;
+  background-color: #14532d;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 8px #22c55e;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+  .login-register-container {
+  max-width: 90%;
+  padding: 20px 15px;
+  }
+  }
+/* Welcome message styles */
+.welcome-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  color: #f1f5f9;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  }
+  
+  .welcome-message {
+  font-size: 1.8rem;
+  color: #3b82f6;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(59, 130, 246, 0.7);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  }

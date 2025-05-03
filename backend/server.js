@@ -28,6 +28,12 @@ db.query(createUsersTable)
 // Create a new user
 app.post('/users', async (req, res) => {
   const { username, email, password } = req.body;
+
+  // Basic password validation: minimum 6 characters
+  if (!password || password.length < 6) {
+    return res.status(400).json({ error: 'La contraseña debe tener al menos 6 caracteres' });
+  }
+
   try {
     const [result] = await db.query(
       'INSERT INTO users (username, email, password) VALUES (?, ?, ?)',
@@ -36,7 +42,11 @@ app.post('/users', async (req, res) => {
     res.status(201).json({ id: result.insertId, username, email });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Error creating user' });
+    // Check for duplicate email error (MySQL error code 1062)
+    if (err.code === 'ER_DUP_ENTRY') {
+      return res.status(400).json({ error: 'El correo electrónico ya está registrado' });
+    }
+    res.status(500).json({ error: 'Error creando el usuario' });
   }
 });
 
@@ -97,6 +107,29 @@ app.delete('/users/:id', async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Error deleting user' });
+  }
+});
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email y contraseña son requeridos' });
+  }
+  try {
+    const [rows] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
+    if (rows.length === 0) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
+    const user = rows[0];
+    if (user.password !== password) {
+      return res.status(401).json({ error: 'Contraseña incorrecta' });
+    }
+    // Return user info without password
+    const { password: _, ...userWithoutPassword } = user;
+    res.json(userWithoutPassword);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Error en el servidor' });
   }
 });
 

@@ -11,6 +11,18 @@ const Users = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Client-side validation for email and password
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert('Por favor, ingrese un correo electrónico válido');
+      return;
+    }
+    if (formData.password.length < 6) {
+      alert('La contraseña debe tener al menos 6 caracteres');
+      return;
+    }
+
     addUser(formData);
     setFormData({ username: '', email: '', password: '' });
   };

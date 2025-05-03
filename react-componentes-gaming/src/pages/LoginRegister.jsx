@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import '../assets/css/loginRegister.css';
+import '../assets/css/profileAndLoginStyles.css';
 import { UserContext } from '../context/UserContext';
 
 const LoginRegister = () => {
@@ -32,14 +32,7 @@ const LoginRegister = () => {
       setError('Por favor ingresa email y contraseña');
       return;
     }
-    // Buscar el usuario completo en la lista de usuarios
-    const user = users.find((u) => u.email === formData.email);
-    if (user) {
-      loginUser(user);
-      setSuccessMessage('Inicio de sesión exitoso');
-    } else {
-      setError('Usuario no encontrado');
-  
+
     if (!isLogin) {
       // Registration validation
       if (formData.password !== formData.confirmPassword) {
@@ -65,22 +58,26 @@ const LoginRegister = () => {
         });
         setIsLogin(true);
       } catch (err) {
-        setError('Error al registrar usuario');
+        // Show specific error message from addUser if available
+        setError(err.message || 'Error al registrar usuario');
       }
     } else {
-      // Login logic placeholder
-      if (!formData.email || !formData.password) {
-        setError('Por favor ingresa email y contraseña');
-        return;
-      }
-      
-      // Here you would implement login logic, e.g., call backend login endpoint
-      // For now, simulate login by checking if user exists in users list
-      const user = loggedInUser || null;
-      if (!user) {
-        // Simulate login success by setting loggedInUser
-        loginUser({ email: formData.email });
+      // Login logic: call backend login endpoint
+      try {
+        const response = await fetch('http://localhost:4000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: formData.email, password: formData.password }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          setError(data.error || 'Error en el inicio de sesión');
+          return;
+        }
+        loginUser(data);
         setSuccessMessage('Inicio de sesión exitoso');
+      } catch (err) {
+        setError('Error en el inicio de sesión');
       }
     }
   };
@@ -100,9 +97,9 @@ const LoginRegister = () => {
 
   if (loggedInUser) {
     return (
-      <div className="login-register-container">
-        <h2>Bienvenido, {loggedInUser.email}</h2>
-        <button onClick={handleLogout} className="btn-submit">
+      <div className="welcome-container">
+        <h2 className="welcome-message">Bienvenido, {loggedInUser.email}</h2>
+        <button onClick={handleLogout} className="btn-submit btn-logout">
           Cerrar sesión
         </button>
       </div>
